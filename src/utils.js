@@ -10,6 +10,7 @@ export const getTooltip = ({
   tooltipFormatter,
   units,
   values,
+  sortData,
 }) => ({
   show: true,
   confine: true,
@@ -57,6 +58,15 @@ export const getTooltip = ({
             units[v.seriesName] || units['default'],
           ),
         }
+      })
+    }
+    // 升/降序
+    if (sortData && sortData !== 'normal') {
+      data.sort((v1, v2) => {
+        let n1 = parseFloat(v1.itemData)
+        let n2 = parseFloat(v2.itemData)
+        if (sortData === 'asc') return n1 - n2
+        else if (sortData === 'desc') return n2 - n1
       })
     }
     return tooltipTemplate(chartsTilte, data)

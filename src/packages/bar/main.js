@@ -5,7 +5,7 @@ import {
   DEFAULT_FONT_SIZE,
   DEFAULT_LINE_HEIGHT,
   DEFAULT_FONT_COLOR,
-  DEFAULT_GRID as grid,
+  DEFAULT_GRID,
 } from '../../constants'
 
 function getXAxis({ axisVisible, xAxisName }) {
@@ -251,6 +251,7 @@ export const bar = (keys, values, settings, extra) => {
     /**
      * echarts opts
      */
+    grid,
     label,
     itemStyle,
   } = settings
@@ -300,7 +301,7 @@ export const bar = (keys, values, settings, extra) => {
     chartColors,
   })
   const options = {
-    grid,
+    grid: grid || DEFAULT_GRID,
     // legend,
     tooltip,
     xAxis,

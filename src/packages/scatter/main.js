@@ -192,6 +192,7 @@ export const scatter = (keys, values, settings, extra) => {
     /**
      * echarts opts
      */
+    grid,
     label,
     itemStyle,
   } = settings
@@ -251,6 +252,6 @@ export const scatter = (keys, values, settings, extra) => {
     series,
     color: chartColors,
   }
-
+  if (grid) options.grid = grid
   return options
 }

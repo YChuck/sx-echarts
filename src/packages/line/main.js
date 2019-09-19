@@ -186,6 +186,8 @@ export const line = (keys, values, settings, extra) => {
     xAxisType = 'category',
     // default unit
     defaultUnit = 'normal',
+    // sort data, type: normal, asc, desc
+    sortData = 'normal',
     // area flag
     area = false,
     // customize stack obj
@@ -197,6 +199,7 @@ export const line = (keys, values, settings, extra) => {
     /**
      * echarts opts
      */
+    grid,
     label,
     itemStyle,
     lineStyle,
@@ -220,6 +223,7 @@ export const line = (keys, values, settings, extra) => {
       triggerType: 'axis',
       tooltipFormatter,
       units,
+      sortData,
     })
   const xAxis = getXAxis({
     dimension,
@@ -253,5 +257,6 @@ export const line = (keys, values, settings, extra) => {
     series,
     color: chartColors,
   }
+  if (grid) options.grid = grid
   return options
 }

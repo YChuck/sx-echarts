@@ -136,6 +136,8 @@ export const radar = (keys, values, settings, extra) => {
     metrics = tempMetrics,
     // default unit
     defaultUnit = 'normal',
+    // sort data, type: normal, asc, desc
+    sortData = 'normal',
     // echarts radar type
     radarShapeType = 'polygon',
     // label 名称字典
@@ -162,6 +164,7 @@ export const radar = (keys, values, settings, extra) => {
       tooltipFormatter,
       units,
       values: getTooltipData(values, dimension, labelMap),
+      sortData,
     })
   const radar = getRadar({ radarShapeType, values, metrics, labelMap })
   const series = getSeries({

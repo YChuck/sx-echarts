@@ -173,6 +173,8 @@ export const histogram = (keys, values, settings, extra) => {
     xAxisType = 'category',
     // default unit
     defaultUnit = 'normal',
+    // sort data, type: normal, asc, desc
+    sortData = 'normal',
     // customize stack obj
     stack,
     // let data be line
@@ -182,6 +184,7 @@ export const histogram = (keys, values, settings, extra) => {
     // label 名称字典
     labelMap = {},
     // echarts opts
+    grid,
     label,
     itemStyle,
   } = settings
@@ -203,6 +206,7 @@ export const histogram = (keys, values, settings, extra) => {
       triggerType: 'axis',
       tooltipFormatter,
       units,
+      sortData,
     })
   const xAxis = getXAxis({
     dimension,
@@ -234,5 +238,6 @@ export const histogram = (keys, values, settings, extra) => {
     series,
     color: chartColors,
   }
+  if (grid) options.grid = grid
   return options
 }
