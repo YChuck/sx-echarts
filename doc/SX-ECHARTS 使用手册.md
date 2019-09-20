@@ -143,6 +143,7 @@ chainWebpack: (config) => {
 |  yAxisName  |     y轴名称      |  Array  |        包含y轴名称的数组        |          ["我是y轴名称"]           |
 |  xAxisType  | x轴类型 官方类型 | String  |           "category"            |              "value"               |
 | defaultUnit | 图表数据默认单位 | String  |            "normal"             | "percent"/"people"/"rmb"/"normal"  |
+|  sortData   |   数据显示排序   | String  |            "normal"             |       "normal"/"asc"/"desc"        |
 |    area     | 是否展示为面积图 | Boolean |              false              |                true                |
 |    stack    |     堆叠选项     | Object  |               --                | { count: ['访客人数', 'VIP人数'] } |
 |  legendMap  |   图例别名字典   | Object  |               --                |    { date: '我是日期图例别名' }    |
@@ -151,6 +152,7 @@ chainWebpack: (config) => {
 |  itemStyle  | series.itemStyle | Object  |               --                |                 --                 |
 |  lineStyle  | series.lineStyle | Object  |               --                |                 --                 |
 |  areaStyle  | series.areaStyle | Object  |               --                |                 --                 |
+|    grid     |   options.grid   | Object  |               --                |                 --                 |
 
 ####histogram (柱状图) 配置参数
 
@@ -163,12 +165,14 @@ chainWebpack: (config) => {
 |  yAxisName  |     y轴名称      | Array  |        包含y轴名称的数组        |          ["我是y轴名称"]           |
 |  xAxisType  | x轴类型 官方类型 | String |           "category"            |              "value"               |
 | defaultUnit | 图表数据默认单位 | String |            "normal"             | "percent"/"people"/"rmb"/"normal"  |
+|  sortData   |   数据显示排序   | String |            "normal"             |       "normal"/"asc"/"desc"        |
 |    stack    |     堆叠选项     | Object |               --                | { count: ['访客人数', 'VIP人数'] } |
 |  showLine   |     显示成线     | Array  |               --                | ["访问用户"] (则该类数据显示成线)  |
 |  legendMap  |   图例别名字典   | Object |               --                |    { date: '我是日期图例别名' }    |
 |  labelMap   |   标签别名字典   | Object |               --                |    { date: '我是日期标签别名' }    |
 |    label    |   series.label   | Object |               --                |                 --                 |
 |  itemStyle  | series.itemStyle | Object |               --                |                 --                 |
+|    Grid     |   options.grid   | Object |               --                |                 --                 |
 
 ####Pie (饼、环图) 配置参数
 
@@ -193,6 +197,7 @@ chainWebpack: (config) => {
 |   dimension    |       纬度       |  Array  |        包含keys[0]的数组        |              ["XXX"]              |
 |    metrics     |       指标       |  Array  | 包含keys中除第0位外其他项的数组 |          ["aaa", "bbb"]           |
 |  defaultUnit   | 图表数据默认单位 | String  |            "normal"             | "percent"/"people"/"rmb"/"normal" |
+|    sortData    |   数据显示排序   | String  |            "normal"             |       "normal"/"asc"/"desc"       |
 | radarShapeType |       图形       | String  |            "polygon"            |        "polygon"/"circle"         |
 |    labelMap    |   标签别名字典   | Object  |               --                |   { date: '我是日期标签别名' }    |
 |      area      | 是否展示为面积图 | Boolean |              false              |               true                |
@@ -215,6 +220,7 @@ chainWebpack: (config) => {
 | symbolType  |     标记类型     | String Function |            "circle"             |              "rect"               |
 |    label    |   series.label   |     Object      |               --                |                --                 |
 |  itemStyle  | series.itemStyle |     Object      |               --                |                --                 |
+|    grid     |   options.grid   |     Object      |               --                |                --                 |
 
 #### Bar (条形图) 配置参数
 
@@ -235,4 +241,5 @@ chainWebpack: (config) => {
 |    labelMap    |    标签别名字典    | Object  |             --              |   { date: '我是日期标签别名' }    |
 |     label      |    series.label    | Object  |             --              |                --                 |
 |   itemStyle    |  series.itemStyle  | Object  |             --              |                --                 |
+|      gird      |    options.grid    | Object  |             --              |                --                 |
 

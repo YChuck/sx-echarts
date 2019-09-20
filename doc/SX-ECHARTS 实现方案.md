@@ -142,8 +142,8 @@ export const line = (keys, values, settings, extra) => {
 
  	1. **约定入参**：
       + keys、values： 仅是统一数据格式的拆分
-      + settings：图表特殊配置 (每种图表对外暴露的额外配置项)
-      + extra：组件级别参数集合 (部分组件级别参数仅作用在图表特例上)
+      + settings：图表特殊配置参数集合 (包含作用于各图表的特殊配置参数)
+      + extra：组件级别参数集合 (包含作用于图表的通用参数)
       
  	2. **约定细分配置函数接口**：
       + getLegend：图例配置函数
@@ -151,6 +151,10 @@ export const line = (keys, values, settings, extra) => {
       + getXAxis：X轴配置函数
       + getYAxis：Y轴配置函数
       + getSeries：数据组配置函数
+
+​	约定是为了规范配置函数构建：**对约定入参进行处理，将处理好的数据交给对应的细分配置函数处理，最终组合生成最终的配置项**
+
+![nqTPGF.png](https://s2.ax1x.com/2019/09/19/nqTPGF.png)
 
 > 接下来每种图表配置函数，仅按照约定实现即可
 

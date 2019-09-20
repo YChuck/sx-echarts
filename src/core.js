@@ -86,14 +86,14 @@ export default {
     data: {
       deep: true,
       handler(v) {
-        if (v) {
-          this.changeHandler()
-        }
+        if (v) this.changeHandler()
       },
     },
-    setting: {
+    settings: {
       deep: true,
       handler(v) {
+        // 先清空 防止设置变化后 图表没变化
+        this.echarts.clear()
         this.changeHandler()
       },
     },
