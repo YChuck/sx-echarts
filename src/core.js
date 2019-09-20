@@ -92,8 +92,6 @@ export default {
     settings: {
       deep: true,
       handler(v) {
-        // 先清空 防止设置变化后 图表没变化
-        this.echarts.clear()
         this.changeHandler()
       },
     },
@@ -138,7 +136,7 @@ export default {
       if (this.beforeOptionSet && typeof this.beforeOptionSet === 'function')
         this.beforeOptionSet(opts)
       options = opts
-      this.echarts.setOption(opts)
+      this.echarts.setOption(opts, { notMerge: true }) // notMerge 是否和之前的配置合并
     },
     // next tick to resize the canvas
     nextTickResize() {

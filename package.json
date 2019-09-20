@@ -1,6 +1,6 @@
 {
   "name": "sx-echarts",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "SX Echarts Components",
   "private": false,
   "main": "lib/sxEcharts.js",
