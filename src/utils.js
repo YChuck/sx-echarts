@@ -94,6 +94,7 @@ function tooltipTemplate(chartsTilte, data) {
 }
 
 export const formatData = (val, type) => {
+  if (typeof type === 'function') return type(val)
   switch (type) {
     case 'rmb':
       return `${val}元`
