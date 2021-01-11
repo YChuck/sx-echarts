@@ -1,4 +1,5 @@
-# sx-echarts
+# sx-echarts [demo](http://119.45.142.60:8080/sx-echarts/)
+`(服务器较差 加载比较久)`
 
 sx-echarts 是一套基于 Vue2.x 封装的 Echarts 图表组件，用于为开发者提供快速生成图表的服务。
 
