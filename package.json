@@ -1,12 +1,12 @@
 {
   "name": "sx-echarts",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "SX Echarts Components",
   "private": false,
   "main": "lib/sxEcharts.js",
   "scripts": {
     "serve": "webpack-dev-server --config ./config/base.js",
-    "build": "webpack --progress --env.production --config ./config/base.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --env.production --config ./config/base.js",
     "lib": "webpack --progress --config ./config/lib.js",
     "lint": "eslint ./src --fix",
     "fab": "fab run_208 publish_208 -f ./publish.py"
@@ -29,6 +29,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.4.0",

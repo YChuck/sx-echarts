@@ -22,6 +22,7 @@ export const INFOR_ROUTERS = [
 
 export default new Router({
   mode: 'history',
+  base: process.env.NODE_ENV === 'production' ? '/sx-echarts/' : '/',
   routes: [
     {
       path: '/',

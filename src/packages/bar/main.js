@@ -154,7 +154,10 @@ function getSeries({
         type: 'bar',
         // 取最大数据值的 1.5 倍
         data: Array(dataTemp[item].length).fill(
-          Math.max.apply(null, values.map(v => v[item])) * 1.5,
+          Math.max.apply(
+            null,
+            values.map(v => v[item]),
+          ) * 1.5,
         ),
         barWidth: barTypeMap[barStyleType],
         barGap: '-100%',

@@ -7,17 +7,19 @@ const webpack = require('webpack')
 const path = require('path')
 const merge = require('webpack-merge')
 
-const resolve = dir => path.join(__dirname, '..', dir)
+const resolve = (dir) => path.join(__dirname, '..', dir)
+const { checkPort } = require('./utils/check')
 
 const dev = require('./dev')
 const prod = require('./prod')
 
-const buildConfig = env => {
-  let isProd = env && env.production
+const buildConfig = (env) => {
+  let isProd = process.env.NODE_ENV === 'production'
   let base = {
     entry: './example/main.js',
     output: {
-      publicPath: '/', // 指定在浏览器中所引用的「此输出目录对应的公开 URL」
+      // 指定在浏览器中所引用的「此输出目录对应的公开 URL」
+      publicPath: isProd ? '/sx-echarts/' : '/',
       path: resolve('dist'),
       filename: 'js/[name].js',
       chunkFilename: 'js/[name]_[chunkhash:8].js',
@@ -121,7 +123,11 @@ const buildConfig = env => {
     ],
   }
   if (isProd) return merge(base, prod)
-  else return merge(base, dev)
+  else
+    return checkPort(9090).then((port) => {
+      base.devServer.port = port
+      return merge(base, dev)
+    })
 }
 
-module.exports = env => buildConfig(env)
+module.exports = (env) => buildConfig(env)
