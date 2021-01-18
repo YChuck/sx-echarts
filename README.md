@@ -8,7 +8,7 @@ sx-echarts 是一套基于 Vue2.x 封装的 Echarts 图表组件，用于为开�
 
 **组件引入、组件参数等，请务必阅读doc目录下的使用手册**
 
-## NPM 安装
+## [NPM](https://www.npmjs.com/package/sx-echarts) 安装
 
 ```javascript
 $ npm install sx-echarts --save
